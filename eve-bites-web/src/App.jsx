@@ -126,11 +126,11 @@ const App = () => {
                 <a href="#about" onClick={() => setIsMobileMenuOpen(false)} className="text-2xl font-black tracking-widest hover:text-brand-gold">ABOUT</a>
                 <a href="#menu" onClick={() => setIsMobileMenuOpen(false)} className="text-2xl font-black tracking-widest hover:text-brand-gold">MENU</a>
                 <div className="pt-8 border-t border-white/10">
-                   <p className="text-brand-gold text-[10px] font-bold uppercase tracking-widest mb-4">Contact Us</p>
-                   <div className="flex items-center gap-3 text-brand-cream/60">
-                    <Phone size={18} />
-                    <span className="text-sm">+234 816 662 9568</span>
-                  </div>
+                    <p className="text-brand-gold text-[10px] font-bold uppercase tracking-widest mb-4">Contact Us</p>
+                    <div className="flex items-center gap-3 text-brand-cream/60">
+                     <Phone size={18} />
+                     <span className="text-sm">+234 816 662 9568</span>
+                   </div>
                 </div>
               </div>
             </motion.div>
@@ -195,10 +195,11 @@ const App = () => {
             viewport={{ once: true }}
             className="relative"
           >
-            <div className="absolute -inset-4 border-2 border-brand-gold/20 rounded-[3rem] -z-10" />
+            {/* Adjusted decorative border to match new image height */}
+            <div className="absolute -inset-4 border-2 border-brand-gold/20 rounded-[3rem] -z-10 h-[432px]" />
             <img 
               src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&q=80&w=800" 
-              className="w-full h-[500px] object-cover rounded-[2.5rem] shadow-2xl" 
+              className="w-full h-[400px] object-cover rounded-[2.5rem] shadow-2xl" 
               alt="About Eve's Bites" 
             />
           </motion.div>
@@ -244,7 +245,7 @@ const App = () => {
       </section>
 
       {/* Footer */}
-      <footer id="contact" className="bg-black border-t border-brand-gold/10 py-20 px-6">
+      <footer id="contact" className="bg-brand-dark border-t border-brand-gold/10 py-20 px-6">
         <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12 items-start">
           <div>
             <h4 className="text-2xl font-black text-brand-gold mb-4">EVE'S BITES</h4>
@@ -280,9 +281,9 @@ const App = () => {
               <h3 className="text-2xl md:text-3xl font-black mb-2">Final Step</h3>
               <p className="text-brand-gold text-xs font-bold mb-8 uppercase tracking-widest">Ordering: {selectedItem?.name}</p>
               <form onSubmit={sendToWhatsApp} className="space-y-4 md:space-y-6">
-                <input required className="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-4 focus:border-brand-gold outline-none" placeholder="Your Name" onChange={(e) => setFormData({...formData, name: e.target.value})} />
-                <input required type="tel" className="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-4 focus:border-brand-gold outline-none" placeholder="Phone Number" onChange={(e) => setFormData({...formData, phone: e.target.value})} />
-                <textarea required className="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-4 focus:border-brand-gold outline-none h-24 md:h-28 resize-none" placeholder="Delivery Address" onChange={(e) => setFormData({...formData, location: e.target.value})} />
+                <input required className="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-4 focus:border-brand-gold outline-none text-white" placeholder="Your Name" onChange={(e) => setFormData({...formData, name: e.target.value})} />
+                <input required type="tel" className="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-4 focus:border-brand-gold outline-none text-white" placeholder="Phone Number" onChange={(e) => setFormData({...formData, phone: e.target.value})} />
+                <textarea required className="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-4 focus:border-brand-gold outline-none h-24 md:h-28 resize-none text-white" placeholder="Delivery Address" onChange={(e) => setFormData({...formData, location: e.target.value})} />
                 <button type="submit" className="w-full bg-brand-gold text-brand-dark font-black py-4 md:py-5 rounded-2xl flex items-center justify-center gap-3">
                   <Send size={18} /> CONFIRM VIA WHATSAPP
                 </button>
